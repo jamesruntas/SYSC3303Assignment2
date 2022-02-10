@@ -10,18 +10,9 @@ public class Server {
    public Server()
    {
       try {
-         // Construct a datagram socket and bind it to any available 
-         // port on the local host machine. This socket will be used to
-         // send UDP Datagram packets.
          sendSocket = new DatagramSocket();
-
-         // Construct a datagram socket and bind it to port 5000 
-         // on the local host machine. This socket will be used to
-         // receive UDP Datagram packets.
          receiveSocket = new DatagramSocket(5000);
-         
-         // to test socket timeout (2 seconds)
-         //receiveSocket.setSoTimeout(2000);
+         receiveSocket.setSoTimeout(2000);
       } catch (SocketException se) {
          se.printStackTrace();
          System.exit(1);
