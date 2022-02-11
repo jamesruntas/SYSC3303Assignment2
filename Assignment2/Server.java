@@ -46,7 +46,7 @@ public class Server {
       System.out.println(received + "\n");
       
       try {
-          Thread.sleep(5000);
+          Thread.sleep(2000);
       } catch (InterruptedException e ) {
           e.printStackTrace();
           System.exit(1);
@@ -77,6 +77,7 @@ public class Server {
 
    public static void main( String args[] )
    {
+      System.out.println("Server.java");
       Server c = new Server();
       c.receiveAndEcho();
    }
