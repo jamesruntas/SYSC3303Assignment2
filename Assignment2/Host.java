@@ -4,8 +4,7 @@ import java.io.*;
 import java.net.*;
 
 public class Host {
-    
-    DatagramPacket sendPacket, receivePacket;
+	DatagramPacket sendPacket, receivePacket;
 	DatagramSocket sendReceiveSocket, receiveSocket;
 	int clientPort = 23;
 	int serverPort = 69;
@@ -107,9 +106,4 @@ public class Host {
 			host.running();
 		}
 	}
-    
-
-
-
-
 }
