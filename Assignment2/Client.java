@@ -74,6 +74,7 @@ public class Client {
 
       // We're finished, so close the socket.
       sendReceiveSocket.close();
+      System.out.println("Socket has been closed.");
    }
 
    public static void main(String args[])

@@ -65,13 +65,13 @@ public class Server {
 
       try {
          sendSocket.send(sendPacket);
+         sendSocket.close();
       } catch (IOException e) {
          e.printStackTrace();
          System.exit(1);
       }
 
       System.out.println("Server: packet sent");
-      sendSocket.close();
       receiveSocket.close();
    }
 
@@ -79,7 +79,9 @@ public class Server {
    {
       System.out.println("Server.java");
       Server c = new Server();
-      c.receiveAndEcho();
+      while(true){
+         c.receiveAndEcho();
+      }
    }
 }
 
