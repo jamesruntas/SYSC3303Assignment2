@@ -101,6 +101,7 @@ public class Host {
 	
 	public static void main(String[] args){
 		Host host = new Host();
+		System.out.println("Host.java");
 		while(true){
 			host.running();
 		}

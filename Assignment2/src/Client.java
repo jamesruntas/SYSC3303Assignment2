@@ -22,32 +22,11 @@ public class Client {
 
 	   public void sendAndReceive()
 	   {
-	      // Prepare a DatagramPacket and send it via sendReceiveSocket
-	      // to port 5000 on the destination host.
-	 
 	      String s = "Anyone there?";
 	      System.out.println("Client: sending a packet containing:\n" + s);
 
-	      // Java stores characters as 16-bit Unicode values, but 
-	      // DatagramPackets store their messages as byte arrays.
-	      // Convert the String into bytes according to the platform's 
-	      // default character encoding, storing the result into a new 
-	      // byte array.
-
 	      byte msg[] = s.getBytes();
 
-	      // Construct a datagram packet that is to be sent to a specified port 
-	      // on a specified host.
-	      // The arguments are:
-	      //  msg - the message contained in the packet (the byte array)
-	      //  msg.length - the length of the byte array
-	      //  InetAddress.getLocalHost() - the Internet address of the 
-	      //     destination host.
-	      //     In this example, we want the destination to be the same as
-	      //     the source (i.e., we want to run the client and server on the
-	      //     same computer). InetAddress.getLocalHost() returns the Internet
-	      //     address of the local host.
-	      //  5000 - the destination port number on the destination host.
 	      try {
 	         sendPacket = new DatagramPacket(msg, msg.length,
 	                                         InetAddress.getLocalHost(), 5000);
@@ -74,9 +53,6 @@ public class Client {
 	      }
 
 	      System.out.println("Client: Packet sent.\n");
-
-	      // Construct a DatagramPacket for receiving packets up 
-	      // to 100 bytes long (the length of the byte array).
 
 	      byte data[] = new byte[100];
 	      receivePacket = new DatagramPacket(data, data.length);
